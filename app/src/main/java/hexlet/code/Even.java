@@ -6,9 +6,9 @@ public class Even {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
         for (int i = 0; i < 3; i++) {
-            int randomNum = (int) (Math.random() * 10);
+            int randomNum = Engine.getRandomNumber();
             System.out.println("Question: " + randomNum);
-            String answerToQuestion = Cli.getUserAnswer();
+            String answerToQuestion = Engine.getUserAnswer();
 
             String userAnswer = "";
 
@@ -20,7 +20,7 @@ public class Even {
                 System.out.println("Correct!");
             } else {
                 System.out.println("'" + answerToQuestion + "' is wrong answer ;(. Correct answer was '" + userAnswer + "'");
-                System.out.println("Let's try again," + userAnswer + "!");
+                System.out.println("Let's try again, " + userName + "!");
                 break;
             }
 
