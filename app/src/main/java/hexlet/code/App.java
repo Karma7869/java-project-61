@@ -2,7 +2,12 @@ package hexlet.code;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("Welcome to the Brain Games!");
-        Cli.greetUser();
+        int numGame = Cli.getGameChoice();
+
+        if (numGame == 2) {
+            Even.evenGame();
+        } else if (numGame == 1) {
+            Cli.getUserName();
+        }
     }
 }
