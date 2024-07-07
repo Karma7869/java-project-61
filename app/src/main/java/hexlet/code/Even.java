@@ -7,25 +7,27 @@ public class Even {
 
         for (int i = 0; i < 3; i++) {
             int randomNum = Engine.getRandomNumber();
-            System.out.println("Question: " + randomNum);
+            System.out.println(Engine.publicQuestion + randomNum);
             String answerToQuestion = Engine.getUserAnswer();
 
             String userAnswer = "";
 
             if (answerToQuestion.equals("yes") && randomNum % 2 == 0) {
-                userAnswer = "yes";
-                System.out.println("Correct!");
+                System.out.println(Engine.publicCorrect);
             } else if (answerToQuestion.equals("no") && randomNum % 2 != 0) {
-                userAnswer = "no";
-                System.out.println("Correct!");
+                System.out.println(Engine.publicCorrect);
             } else {
-                System.out.println("'" + answerToQuestion + "' is wrong answer ;(. Correct answer was '" + userAnswer + "'");
-                System.out.println("Let's try again, " + userName + "!");
+                if (randomNum % 2 == 0) {
+                    userAnswer = "yes";
+                } else {
+                    userAnswer = "no";
+                }
+                Engine.getUserLost(answerToQuestion, userAnswer, userName);
                 break;
             }
 
             if (i == 2) {
-                System.out.println("Congratulations, " + userName + "!");
+                Engine.getWinningGame(userName);
             }
         }
     }

@@ -16,20 +16,19 @@ public class Calc {
             int randomNumTwo = Engine.getRandomNumber();
             int correctAnswer = conversionOperation(randomNumOne, randomNumTwo, operation);
 
-            System.out.println("Question: " + randomNumOne + operation + randomNumTwo);
+            System.out.println(Engine.publicQuestion + randomNumOne + operation + randomNumTwo);
             String answerToQuestion = Engine.getUserAnswer();
             int conversionAnswerToQuestion = Integer.parseInt(answerToQuestion);
 
             if (correctAnswer == conversionAnswerToQuestion) {
-                System.out.println("Correct!");
+                System.out.println(Engine.publicCorrect);
 
             } else {
-                System.out.println("'" + conversionAnswerToQuestion + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'");
-                System.out.println("Let's try again, " + userName);
+                Engine.getUserLost(String.valueOf(conversionAnswerToQuestion), String.valueOf(correctAnswer), userName);
                 break;
             }
             if (i == 2) {
-                System.out.println("Congratulations, " + userName + "!");
+                Engine.getWinningGame(userName);
             }
         }
     }
