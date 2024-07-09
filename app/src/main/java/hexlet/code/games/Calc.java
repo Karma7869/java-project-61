@@ -11,7 +11,7 @@ public class Calc {
         System.out.println("What is the result of the expression?");
 
         Random rand = new Random();
-        String[] operations = {" + ", " - ", " * ", " / "};
+        String[] operations = {" + ", " - ", " * "};
 
         for (int i = 0; i < 3; i++) {
             String operation = operations[rand.nextInt(operations.length)];
@@ -43,10 +43,8 @@ public class Calc {
         } else if (operation.equals(" - ")) {
             return randNumOne - randNumTwo;
 
-        } else if (operation.equals(" * ")) {
-            return randNumOne * randNumTwo;
         } else {
-            return randNumOne / randNumTwo;
+            return randNumOne * randNumTwo;
         }
     }
 }
