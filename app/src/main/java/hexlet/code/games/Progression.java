@@ -19,7 +19,7 @@ public class Progression {
             numbers[0] = Engine.getRandomNumber();
             int magnifier = Engine.getRandomNumber();
 
-            for (int j = 1; j < 10; j++) {
+            for (int j = 1; j < DEFAULT_LENGTH; j++) {
                 numbers[j] = numbers[j - 1] + magnifier;
             }
 
