@@ -3,7 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Cli;
 import hexlet.code.Engine;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Progression {
@@ -30,7 +29,7 @@ public class Progression {
             String missingNumber = numberString[randIndex];
             numberString[randIndex] = "..";
 
-            System.out.println(Engine.publicQuestion + Arrays.toString(numberString));
+            System.out.println(Engine.publicQuestion + String.join(" ", numberString));
             String answerToQuestion = Engine.getUserAnswer();
 
             if (answerToQuestion.equals(missingNumber)) {
