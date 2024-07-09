@@ -6,13 +6,17 @@ import hexlet.code.Engine;
 import java.util.Random;
 
 public class Progression {
+
+    private static final int DEFAULT_LENGTH = 10;
+
     public static void gameProgression() {
+
         String userName = Cli.getUserName();
         Engine engine = new Engine();
         System.out.println("What number is missing in the progression?");
 
         for (int i = 0; i < 3; i++) {
-            int[] numbers = new int[10];
+            int[] numbers = new int[DEFAULT_LENGTH];
             numbers[0] = Engine.getRandomNumber();
             int magnifier = Engine.getRandomNumber();
 
