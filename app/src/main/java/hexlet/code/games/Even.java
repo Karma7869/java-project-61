@@ -9,7 +9,7 @@ public class Even {
         Engine engine = new Engine();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < engine.getNumberQuestion(); i++) {
             int randomNum = Engine.getRandomNumber();
             System.out.println(engine.getPublicQuestion() + randomNum);
             String answerToQuestion = Engine.getUserAnswer();

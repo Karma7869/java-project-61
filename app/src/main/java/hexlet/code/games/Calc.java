@@ -14,7 +14,7 @@ public class Calc {
         Random rand = new Random();
         String[] operations = {" + ", " - ", " * "};
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < engine.getNumberQuestion(); i++) {
             String operation = operations[rand.nextInt(operations.length)];
             int randomNumOne = Engine.getRandomNumber();
             int randomNumTwo = Engine.getRandomNumber();

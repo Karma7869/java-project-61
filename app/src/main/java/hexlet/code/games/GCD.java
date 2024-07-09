@@ -9,7 +9,8 @@ public class GCD {
         Engine engine = new Engine();
         System.out.println("Find the greatest common divisor of given numbers.");
 
-        for (int i = 0; i < 3; i++) {
+
+        for (int i = 0; i < engine.getNumberQuestion(); i++) {
             int randomNumOne = Engine.getRandomNumber();
             int randomNumTwo = Engine.getRandomNumber();
 
