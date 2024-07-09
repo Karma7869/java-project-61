@@ -6,9 +6,9 @@ public class Cli {
     private static Scanner scanner = new Scanner(System.in);
 
     public static String getUserName() {
-        System.out.println("Welcome to the Brain Games! \nMay I have your name? ");
+        System.out.print("Welcome to the Brain Games! \nMay I have your name? ");
         String userName = scanner.nextLine();
-        System.out.println("Hello, " + userName);
+        System.out.println("Hello, " + userName + "!");
         return userName;
     }
 }
