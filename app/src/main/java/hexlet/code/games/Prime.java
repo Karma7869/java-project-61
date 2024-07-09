@@ -9,6 +9,7 @@ public class Prime {
     public static void primeGame() {
 
         String userName = Cli.getUserName();
+        Engine engine = new Engine();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         for (int i = 0; i < 3; i++) {
@@ -19,7 +20,7 @@ public class Prime {
             Random rand = new Random();
             int randomInt = rand.nextInt(100) + 1;
 
-            System.out.println(Engine.publicQuestion + randomInt);
+            System.out.println(engine.getPublicQuestion() + randomInt);
             String answerToQuestion = Engine.getUserAnswer();
 
             for (int j = 1; j < 100; j++) {
@@ -28,9 +29,9 @@ public class Prime {
                 }
             }
             if (count == 2 && answerToQuestion.equals("yes")) {
-                System.out.println(Engine.publicCorrect);
+                System.out.println(engine.getPublicCorrect());
             } else if (count != 2 && answerToQuestion.equals("no")) {
-                System.out.println(Engine.publicCorrect);
+                System.out.println(engine.getPublicCorrect());
             } else {
                 if (count == 2) {
                     userAnswer = "yes";

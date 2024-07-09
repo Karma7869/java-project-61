@@ -10,6 +10,7 @@ public class Calc {
         String userName = Cli.getUserName();
         System.out.println("What is the result of the expression?");
 
+        Engine engine = new Engine();
         Random rand = new Random();
         String[] operations = {" + ", " - ", " * "};
 
@@ -19,12 +20,12 @@ public class Calc {
             int randomNumTwo = Engine.getRandomNumber();
             int correctAnswer = conversionOperation(randomNumOne, randomNumTwo, operation);
 
-            System.out.println(Engine.publicQuestion + randomNumOne + operation + randomNumTwo);
+            System.out.println(engine.getPublicQuestion() + randomNumOne + operation + randomNumTwo);
             String answerToQuestion = Engine.getUserAnswer();
             int conversionAnswerToQuestion = Integer.parseInt(answerToQuestion);
 
             if (correctAnswer == conversionAnswerToQuestion) {
-                System.out.println(Engine.publicCorrect);
+                System.out.println(engine.getPublicCorrect());
 
             } else {
                 Engine.getUserLost(String.valueOf(conversionAnswerToQuestion), String.valueOf(correctAnswer), userName);

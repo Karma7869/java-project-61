@@ -8,6 +8,7 @@ import java.util.Random;
 public class Progression {
     public static void gameProgression() {
         String userName = Cli.getUserName();
+        Engine engine = new Engine();
         System.out.println("What number is missing in the progression?");
 
         for (int i = 0; i < 3; i++) {
@@ -29,11 +30,11 @@ public class Progression {
             String missingNumber = numberString[randIndex];
             numberString[randIndex] = "..";
 
-            System.out.println(Engine.publicQuestion + String.join(" ", numberString));
+            System.out.println(engine.getPublicQuestion() + String.join(" ", numberString));
             String answerToQuestion = Engine.getUserAnswer();
 
             if (answerToQuestion.equals(missingNumber)) {
-                System.out.println(Engine.publicCorrect);
+                System.out.println(engine.getPublicCorrect());
             } else {
                 Engine.getUserLost(answerToQuestion, missingNumber, userName);
                 break;

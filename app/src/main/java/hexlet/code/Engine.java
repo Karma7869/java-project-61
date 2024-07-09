@@ -4,8 +4,17 @@ import java.util.Scanner;
 
 public class Engine {
     private static Scanner scanner = new Scanner(System.in);
-    public static String publicQuestion = "Question: ";
-    public static String publicCorrect = "Correct!";
+
+    private String publicQuestion = "Question: ";
+    private String publicCorrect = "Correct!";
+
+    public String getPublicQuestion() {
+        return publicQuestion;
+    }
+
+    public String getPublicCorrect() {
+        return publicCorrect;
+    }
 
     public static String getUserAnswer() {
         System.out.print("Your answer: ");

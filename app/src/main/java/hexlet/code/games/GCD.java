@@ -6,13 +6,14 @@ import hexlet.code.Engine;
 public class GCD {
     public static void gcdGame() {
         String userName = Cli.getUserName();
+        Engine engine = new Engine();
         System.out.println("Find the greatest common divisor of given numbers.");
 
         for (int i = 0; i < 3; i++) {
             int randomNumOne = Engine.getRandomNumber();
             int randomNumTwo = Engine.getRandomNumber();
 
-            System.out.println(Engine.publicQuestion + randomNumOne + " " + randomNumTwo);
+            System.out.println(engine.getPublicQuestion() + randomNumOne + " " + randomNumTwo);
             String answerToQuestion = Engine.getUserAnswer();
 
             while (randomNumTwo != 0) {
@@ -24,7 +25,7 @@ public class GCD {
             int gcd = randomNumOne;
 
             if (answerToQuestion.equals(String.valueOf(gcd))) {
-                System.out.println(Engine.publicCorrect);
+                System.out.println(engine.getPublicCorrect());
             } else {
                 Engine.getUserLost(answerToQuestion, String.valueOf(gcd), userName);
                 break;
