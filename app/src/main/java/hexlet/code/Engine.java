@@ -2,7 +2,7 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-public class Engine {
+public final class Engine {
     private static Scanner scanner = new Scanner(System.in);
     private static final int DEFAULT_LENGTH = 10;
 
