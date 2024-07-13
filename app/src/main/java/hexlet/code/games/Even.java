@@ -1,38 +1,25 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
+import hexlet.code.Util;
 
 public class Even {
     public static void evenGame() {
-        String userName = Cli.getUserName();
-        Engine engine = new Engine();
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        String question = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-        for (int i = 0; i < engine.getNumberQuestion(); i++) {
-            int randomNum = Engine.getRandomNumber();
-            System.out.println(engine.getPublicQuestion() + randomNum);
-            String answerToQuestion = Engine.getUserAnswer();
+        String[] questionToUser = new String[3];
+        String[] correctAnswers = new String[3];
 
-            String userAnswer = "";
+        for (int i = 0; i < Util.NUMBER_OF_QUESTIONS; i++) {
+            int randomNum = Util.getRandomNumber();
+            questionToUser[i] = String.valueOf(randomNum);
 
-            if (answerToQuestion.equals("yes") && randomNum % 2 == 0) {
-                System.out.println(engine.getPublicCorrect());
-            } else if (answerToQuestion.equals("no") && randomNum % 2 != 0) {
-                System.out.println(engine.getPublicCorrect());
-            } else {
-                if (randomNum % 2 == 0) {
-                    userAnswer = "yes";
-                } else {
-                    userAnswer = "no";
-                }
-                Engine.getUserLost(answerToQuestion, userAnswer, userName);
-                break;
-            }
-
-            if (i == 2) {
-                Engine.getWinningGame(userName);
+            if (randomNum % 2 == 0) {
+                correctAnswers[i] = "yes";
+            } else if (randomNum % 2 != 0) {
+                correctAnswers[i] = "no";
             }
         }
+        Engine.gameEngine(question, correctAnswers, questionToUser);
     }
 }

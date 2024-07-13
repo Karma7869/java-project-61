@@ -4,41 +4,30 @@ import java.util.Scanner;
 
 public final class Engine {
     private static Scanner scanner = new Scanner(System.in);
-    private static final int DEFAULT_LENGTH = 10;
 
-    private String publicQuestion = "Question: ";
-    private String publicCorrect = "Correct!";
-    private static final int NUMBER_QUESTION = 3;
+    public static void gameEngine(String question, String[] correctAnswer, String[] questionToUser) {
+        System.out.print("Welcome to the Brain Games! \nMay I have your name? ");
+        String userName = scanner.nextLine();
+        System.out.println("Hello, " + userName + "!");
+        System.out.println(question);
 
-    public int getNumberQuestion() {
-        return NUMBER_QUESTION;
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Question: " + questionToUser[i]);
+            System.out.print("Your answer: ");
+            String inputResponse = scanner.nextLine();
+
+            if (correctAnswer[i].equals(inputResponse)) {
+                System.out.println("Correct!");
+            } else {
+                System.out.println("'" + inputResponse + "' is wrong answer ;(. Correct answer was '"
+                        + correctAnswer[i] + "'");
+
+                System.out.println("Let's try again, " + userName + "!");
+                break;
+            }
+            if (i == 2) {
+                System.out.println("Congratulations, " + userName + "!");
+            }
+        }
     }
-
-    public String getPublicQuestion() {
-        return publicQuestion;
-    }
-
-    public String getPublicCorrect() {
-        return publicCorrect;
-    }
-
-    public static String getUserAnswer() {
-        System.out.print("Your answer: ");
-        String inputResponse = scanner.nextLine();
-        return inputResponse;
-    }
-
-    public static int getRandomNumber() {
-        return (int) (Math.random() * DEFAULT_LENGTH);
-    }
-
-    public static void getUserLost(String answerToQuestion, String userAnswer, String userName) {
-        System.out.println("'" + answerToQuestion + "' is wrong answer ;(. Correct answer was '" + userAnswer + "'");
-        System.out.println("Let's try again, " + userName + "!");
-    }
-
-    public static void getWinningGame(String userName) {
-        System.out.println("Congratulations, " + userName + "!");
-    }
-
 }

@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
+import hexlet.code.Util;
 
 import java.util.Random;
 
@@ -10,14 +10,14 @@ public class Progression {
 
     public static void gameProgression() {
 
-        String userName = Cli.getUserName();
-        Engine engine = new Engine();
-        System.out.println("What number is missing in the progression?");
+        String question = "What number is missing in the progression?";
+        String[] questionToUser = new String[3];
+        String[] correctAnswers = new String[3];
 
-        for (int i = 0; i < engine.getNumberQuestion(); i++) {
+        for (int i = 0; i < Util.NUMBER_OF_QUESTIONS; i++) {
             int[] numbers = new int[DEFAULT_LENGTH];
-            numbers[0] = Engine.getRandomNumber();
-            int magnifier = Engine.getRandomNumber();
+            numbers[0] = Util.getRandomNumber();
+            int magnifier = Util.getRandomNumber();
 
             for (int j = 1; j < DEFAULT_LENGTH; j++) {
                 numbers[j] = numbers[j - 1] + magnifier;
@@ -33,19 +33,9 @@ public class Progression {
             String missingNumber = numberString[randIndex];
             numberString[randIndex] = "..";
 
-            System.out.println(engine.getPublicQuestion() + String.join(" ", numberString));
-            String answerToQuestion = Engine.getUserAnswer();
-
-            if (answerToQuestion.equals(missingNumber)) {
-                System.out.println(engine.getPublicCorrect());
-            } else {
-                Engine.getUserLost(answerToQuestion, missingNumber, userName);
-                break;
-            }
-
-            if (i == 2) {
-                Engine.getWinningGame(userName);
-            }
+            questionToUser[i] = String.join(" ", numberString);
+            correctAnswers[i] = missingNumber;
         }
+        Engine.gameEngine(question, correctAnswers, questionToUser);
     }
 }
