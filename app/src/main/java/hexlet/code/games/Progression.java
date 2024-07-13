@@ -11,8 +11,8 @@ public class Progression {
     public static void gameProgression() {
 
         String question = "What number is missing in the progression?";
-        String[] questionToUser = new String[3];
-        String[] correctAnswers = new String[3];
+        String[] questionToUser = new String[Util.NUMBER_OF_QUESTIONS];
+        String[] correctAnswers = new String[Util.NUMBER_OF_QUESTIONS];
 
         for (int i = 0; i < Util.NUMBER_OF_QUESTIONS; i++) {
             int[] numbers = new int[DEFAULT_LENGTH];

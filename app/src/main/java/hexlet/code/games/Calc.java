@@ -11,8 +11,8 @@ public class Calc {
 
         Random rand = new Random();
         String[] operations = {" + ", " - ", " * "};
-        String[] questionToUser = new String[3];
-        String[] correctAnswers = new String[3];
+        String[] questionToUser = new String[Util.NUMBER_OF_QUESTIONS];
+        String[] correctAnswers = new String[Util.NUMBER_OF_QUESTIONS];
 
         for (int i = 0; i < Util.NUMBER_OF_QUESTIONS; i++) {
             String operation = operations[rand.nextInt(operations.length)];

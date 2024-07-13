@@ -12,8 +12,8 @@ public class Prime {
 
         String question = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-        String[] questionToUser = new String[3];
-        String[] correctAnswers = new String[3];
+        String[] questionToUser = new String[Util.NUMBER_OF_QUESTIONS];
+        String[] correctAnswers = new String[Util.NUMBER_OF_QUESTIONS];
 
         for (int i = 0; i < Util.NUMBER_OF_QUESTIONS; i++) {
 
