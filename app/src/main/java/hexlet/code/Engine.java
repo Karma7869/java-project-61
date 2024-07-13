@@ -11,7 +11,7 @@ public final class Engine {
         System.out.println("Hello, " + userName + "!");
         System.out.println(question);
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < Util.NUMBER_OF_QUESTIONS; i++) {
             System.out.println("Question: " + questionToUser[i]);
             System.out.print("Your answer: ");
             String inputResponse = scanner.nextLine();
