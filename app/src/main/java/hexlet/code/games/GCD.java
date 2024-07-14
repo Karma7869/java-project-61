@@ -7,23 +7,26 @@ public class GCD {
     public static void gcdGame() {
         String question = "Find the greatest common divisor of given numbers.";
 
-        String[] questionToUser = new String[Util.NUMBER_OF_QUESTIONS];
-        String[] correctAnswers = new String[Util.NUMBER_OF_QUESTIONS];
+        String[] questionToUser = new String[Engine.NUMBER_OF_QUESTIONS];
+        String[] correctAnswers = new String[Engine.NUMBER_OF_QUESTIONS];
 
-
-        for (int i = 0; i < Util.NUMBER_OF_QUESTIONS; i++) {
+        for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             int randomNumOne = Util.getRandomNumber();
             int randomNumTwo = Util.getRandomNumber();
 
             questionToUser[i] = randomNumOne + " " + randomNumTwo;
 
-            while (randomNumTwo != 0) {
-                int multiple = randomNumTwo;
-                randomNumTwo = randomNumOne % randomNumTwo;
-                randomNumOne = multiple;
-            }
-            correctAnswers[i] = String.valueOf(randomNumOne);
+            correctAnswers[i] = String.valueOf(findingGcd(randomNumOne, randomNumTwo));
         }
         Engine.gameEngine(question, correctAnswers, questionToUser);
+    }
+
+    public static int findingGcd(int numOne, int numTwo) {
+        while (numTwo != 0) {
+            int multiple = numTwo;
+            numTwo = numOne % numTwo;
+            numOne = multiple;
+        }
+        return numOne;
     }
 }

@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Util;
 
 import java.util.Random;
 
@@ -12,29 +11,33 @@ public class Prime {
 
         String question = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-        String[] questionToUser = new String[Util.NUMBER_OF_QUESTIONS];
-        String[] correctAnswers = new String[Util.NUMBER_OF_QUESTIONS];
+        String[] questionToUser = new String[Engine.NUMBER_OF_QUESTIONS];
+        String[] correctAnswers = new String[Engine.NUMBER_OF_QUESTIONS];
 
-        for (int i = 0; i < Util.NUMBER_OF_QUESTIONS; i++) {
-
-            int count = 0;
+        for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
 
             Random rand = new Random();
             int randomInt = rand.nextInt(NUMBER_RANGE) + 1;
 
             questionToUser[i] = String.valueOf(randomInt);
 
-            for (int j = 1; j < NUMBER_RANGE; j++) {
-                if (randomInt % j == 0) {
-                    count++;
-                }
-            }
-            if (count == 2) {
+            if (primeNumber(randomInt)) {
                 correctAnswers[i] = "yes";
-            } else if (count != 2) {
+            } else {
                 correctAnswers[i] = "no";
             }
         }
         Engine.gameEngine(question, correctAnswers, questionToUser);
+    }
+
+    public static boolean primeNumber(int randNum) {
+        int count = 0;
+
+        for (int j = 1; j < NUMBER_RANGE; j++) {
+            if (randNum % j == 0) {
+                count++;
+            }
+        }
+        return count == 2;
     }
 }

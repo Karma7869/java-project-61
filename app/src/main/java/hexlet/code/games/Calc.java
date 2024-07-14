@@ -11,10 +11,10 @@ public class Calc {
 
         Random rand = new Random();
         String[] operations = {" + ", " - ", " * "};
-        String[] questionToUser = new String[Util.NUMBER_OF_QUESTIONS];
-        String[] correctAnswers = new String[Util.NUMBER_OF_QUESTIONS];
+        String[] questionToUser = new String[Engine.NUMBER_OF_QUESTIONS];
+        String[] correctAnswers = new String[Engine.NUMBER_OF_QUESTIONS];
 
-        for (int i = 0; i < Util.NUMBER_OF_QUESTIONS; i++) {
+        for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             String operation = operations[rand.nextInt(operations.length)];
             int randomNumOne = Util.getRandomNumber();
             int randomNumTwo = Util.getRandomNumber();

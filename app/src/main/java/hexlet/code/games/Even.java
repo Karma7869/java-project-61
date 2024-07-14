@@ -7,19 +7,23 @@ public class Even {
     public static void evenGame() {
         String question = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-        String[] questionToUser = new String[Util.NUMBER_OF_QUESTIONS];
-        String[] correctAnswers = new String[Util.NUMBER_OF_QUESTIONS];
+        String[] questionToUser = new String[Engine.NUMBER_OF_QUESTIONS];
+        String[] correctAnswers = new String[Engine.NUMBER_OF_QUESTIONS];
 
-        for (int i = 0; i < Util.NUMBER_OF_QUESTIONS; i++) {
+        for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             int randomNum = Util.getRandomNumber();
             questionToUser[i] = String.valueOf(randomNum);
 
-            if (randomNum % 2 == 0) {
+            if (parityDetection(randomNum)) {
                 correctAnswers[i] = "yes";
-            } else if (randomNum % 2 != 0) {
+            } else {
                 correctAnswers[i] = "no";
             }
         }
         Engine.gameEngine(question, correctAnswers, questionToUser);
+    }
+
+    public static boolean parityDetection(int num) {
+        return num % 2 == 0;
     }
 }
