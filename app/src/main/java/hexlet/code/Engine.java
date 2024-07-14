@@ -26,10 +26,7 @@ public final class Engine {
                 System.out.println("Let's try again, " + userName + "!");
                 return;
             }
-
-            if (i == 2) {
-                System.out.println("Congratulations, " + userName + "!");
-            }
         }
+        System.out.println("Congratulations, " + userName + "!");
     }
 }
