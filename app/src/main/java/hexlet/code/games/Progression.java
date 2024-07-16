@@ -7,6 +7,8 @@ import java.util.Random;
 
 public class Progression {
 
+    private static final int ARRAY_LENGTH = 10;
+
     public static void gameProgression() {
 
         String question = "What number is missing in the progression?";
@@ -16,12 +18,12 @@ public class Progression {
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
 
+
             Random rand = new Random();
             int seedNumber = Util.getRandomNumber();
             int magnifier = Util.getRandomNumber();
-            int arrayLength = 10;
 
-            String[] arrayNum = arrayNumbers(seedNumber, magnifier, arrayLength);
+            String[] arrayNum = arrayNumbers(seedNumber, magnifier, ARRAY_LENGTH);
             int randIndex = rand.nextInt(arrayNum.length);
             String missingNumber = arrayNum[randIndex];
             arrayNum[randIndex] = "..";
