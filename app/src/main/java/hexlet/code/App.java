@@ -32,6 +32,7 @@ public class App {
                 break;
             case 1:
                 Cli.getUserName();
+                break;
             case 2:
                 Even.evenGame();
                 break;
