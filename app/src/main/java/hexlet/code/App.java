@@ -9,13 +9,6 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class App {
-    private static final int EXIT = 0;
-    private static final int GREAT = 1;
-    private static final int EVEN_GAME = 2;
-    private static final int CALC_GAME = 3;
-    private static final int GCD_GAME = 4;
-    private static final int PROGRESSION_GAME = 5;
-    private static final int PRIME_GAME = 6;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -34,26 +27,26 @@ public class App {
         System.out.println();
 
         switch (numGame) {
-            case EXIT:
+            case 0:
                 System.out.println("You left the game, come again!");
                 break;
-            case EVEN_GAME:
+            case 1:
+                Cli.getUserName();
+            case 2:
                 Even.evenGame();
                 break;
-            case CALC_GAME:
+            case 3:
                 Calc.calcGame();
                 break;
-            case GCD_GAME:
+            case 4:
                 GCD.gcdGame();
                 break;
-            case PROGRESSION_GAME:
+            case 5:
                 Progression.gameProgression();
                 break;
-            case PRIME_GAME:
+            case 6:
                 Prime.primeGame();
                 break;
-            case GREAT:
-                Cli.getUserName();
             default:
                 System.out.println("Choose the right game and try again!");
                 break;

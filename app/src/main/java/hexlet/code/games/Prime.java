@@ -15,17 +15,11 @@ public class Prime {
         String[] correctAnswers = new String[Engine.NUMBER_OF_QUESTIONS];
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
-
             Random rand = new Random();
             int randomInt = rand.nextInt(NUMBER_RANGE) + 1;
 
             questionToUser[i] = String.valueOf(randomInt);
-
-            if (primeNumber(randomInt)) {
-                correctAnswers[i] = "yes";
-            } else {
-                correctAnswers[i] = "no";
-            }
+            correctAnswers[i] = primeNumber(randomInt) ? "yes" : "no";
         }
         Engine.gameEngine(question, correctAnswers, questionToUser);
     }

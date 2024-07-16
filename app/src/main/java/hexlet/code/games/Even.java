@@ -14,11 +14,7 @@ public class Even {
             int randomNum = Util.getRandomNumber();
             questionToUser[i] = String.valueOf(randomNum);
 
-            if (parityDetection(randomNum)) {
-                correctAnswers[i] = "yes";
-            } else {
-                correctAnswers[i] = "no";
-            }
+            correctAnswers[i] = parityDetection(randomNum) ? "yes" : "no";
         }
         Engine.gameEngine(question, correctAnswers, questionToUser);
     }

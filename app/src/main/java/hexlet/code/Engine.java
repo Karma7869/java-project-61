@@ -4,9 +4,10 @@ import java.util.Scanner;
 
 public final class Engine {
     public static final int NUMBER_OF_QUESTIONS = 3;
-    private static Scanner scanner = new Scanner(System.in);
 
     public static void gameEngine(String question, String[] correctAnswer, String[] questionToUser) {
+        Scanner scanner = new Scanner(System.in);
+
         System.out.print("Welcome to the Brain Games! \nMay I have your name? ");
         String userName = scanner.nextLine();
         System.out.println("Hello, " + userName + "!");

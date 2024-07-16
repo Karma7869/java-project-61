@@ -6,7 +6,6 @@ import hexlet.code.Util;
 import java.util.Random;
 
 public class Progression {
-    public static final int DEFAULT_LENGTH = 10;
 
     public static void gameProgression() {
 
@@ -18,7 +17,11 @@ public class Progression {
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
 
             Random rand = new Random();
-            String[] arrayNum = arrayNumbers();
+            int seedNumber = Util.getRandomNumber();
+            int magnifier = Util.getRandomNumber();
+            int arrayLength = 10;
+
+            String[] arrayNum = arrayNumbers(seedNumber, magnifier, arrayLength);
             int randIndex = rand.nextInt(arrayNum.length);
             String missingNumber = arrayNum[randIndex];
             arrayNum[randIndex] = "..";
@@ -29,12 +32,11 @@ public class Progression {
         Engine.gameEngine(question, correctAnswers, questionToUser);
     }
 
-    public static String[] arrayNumbers() {
-        int[] numbers = new int[DEFAULT_LENGTH];
-        numbers[0] = Util.getRandomNumber();
-        int magnifier = Util.getRandomNumber();
+    public static String[] arrayNumbers(int seedNumber, int magnifier, int arrayLength) {
+        int[] numbers = new int[arrayLength];
+        numbers[0] = seedNumber;
 
-        for (int j = 1; j < DEFAULT_LENGTH; j++) {
+        for (int j = 1; j < arrayLength; j++) {
             numbers[j] = numbers[j - 1] + magnifier;
         }
 
