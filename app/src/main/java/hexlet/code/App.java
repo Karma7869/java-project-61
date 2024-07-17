@@ -23,29 +23,29 @@ public class App {
                 0 - Exit""");
 
         System.out.print("Your choice: ");
-        int numGame = scanner.nextInt();
+        String numGame = String.valueOf(scanner.nextInt());
         System.out.println();
 
         switch (numGame) {
-            case 0:
+            case "0":
                 System.out.println("You left the game, come again!");
                 break;
-            case 1:
+            case "1":
                 Cli.getUserName();
                 break;
-            case 2:
+            case "2":
                 Even.evenGame();
                 break;
-            case 3:
+            case "3":
                 Calc.calcGame();
                 break;
-            case 4:
+            case "4":
                 GCD.gcdGame();
                 break;
-            case 5:
+            case "5":
                 Progression.gameProgression();
                 break;
-            case 6:
+            case "6":
                 Prime.primeGame();
                 break;
             default:
