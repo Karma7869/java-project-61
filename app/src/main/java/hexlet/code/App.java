@@ -27,30 +27,14 @@ public class App {
         System.out.println();
 
         switch (numGame) {
-            case "0":
-                System.out.println("You left the game, come again!");
-                break;
-            case "1":
-                Cli.getUserName();
-                break;
-            case "2":
-                Even.evenGame();
-                break;
-            case "3":
-                Calc.calcGame();
-                break;
-            case "4":
-                GCD.gcdGame();
-                break;
-            case "5":
-                Progression.gameProgression();
-                break;
-            case "6":
-                Prime.primeGame();
-                break;
-            default:
-                System.out.println("Choose the right game and try again!");
-                break;
+            case "0" -> System.out.println("You left the game, come again!");
+            case "1" -> Cli.getUserName();
+            case "2" -> Even.evenGame();
+            case "3" -> Calc.calcGame();
+            case "4" -> GCD.gcdGame();
+            case "5" -> Progression.gameProgression();
+            case "6" -> Prime.primeGame();
+            default -> System.out.println("Choose the right game and try again!");
         }
     }
 }

@@ -11,8 +11,8 @@ public class GCD {
         String[] correctAnswers = new String[Engine.NUMBER_OF_QUESTIONS];
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
-            int randomNumOne = Util.getRandomNumber();
-            int randomNumTwo = Util.getRandomNumber();
+            int randomNumOne = Util.getRandomNumber(10);
+            int randomNumTwo = Util.getRandomNumber(10);
 
             questionToUser[i] = randomNumOne + " " + randomNumTwo;
 

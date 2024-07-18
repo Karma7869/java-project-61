@@ -16,8 +16,8 @@ public class Calc {
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             String operation = operations[rand.nextInt(operations.length)];
-            int randomNumOne = Util.getRandomNumber();
-            int randomNumTwo = Util.getRandomNumber();
+            int randomNumOne = Util.getRandomNumber(10);
+            int randomNumTwo = Util.getRandomNumber(10);
             int correctAnswer = conversionOperation(randomNumOne, randomNumTwo, operation);
             correctAnswers[i] = String.valueOf(correctAnswer);
             questionToUser[i] = randomNumOne + operation + randomNumTwo;

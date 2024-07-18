@@ -11,7 +11,7 @@ public class Even {
         String[] correctAnswers = new String[Engine.NUMBER_OF_QUESTIONS];
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
-            int randomNum = Util.getRandomNumber();
+            int randomNum = Util.getRandomNumber(10);
             questionToUser[i] = String.valueOf(randomNum);
 
             correctAnswers[i] = parityDetection(randomNum) ? "yes" : "no";

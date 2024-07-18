@@ -3,8 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Util;
 
-import java.util.Random;
-
 public class Progression {
 
     private static final int ARRAY_LENGTH = 10;
@@ -18,13 +16,11 @@ public class Progression {
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
 
-
-            Random rand = new Random();
-            int seedNumber = Util.getRandomNumber();
-            int magnifier = Util.getRandomNumber();
+            int seedNumber = Util.getRandomNumber(10);
+            int magnifier = Util.getRandomNumber(10);
 
             String[] arrayNum = arrayNumbers(seedNumber, magnifier, ARRAY_LENGTH);
-            int randIndex = rand.nextInt(arrayNum.length);
+            int randIndex = Util.getRandomNumber(arrayNum.length);
             String missingNumber = arrayNum[randIndex];
             arrayNum[randIndex] = "..";
 
@@ -35,17 +31,12 @@ public class Progression {
     }
 
     public static String[] arrayNumbers(int seedNumber, int magnifier, int arrayLength) {
-        int[] numbers = new int[arrayLength];
-        numbers[0] = seedNumber;
+        String[] numbers = new String[arrayLength];
+        numbers[0] = String.valueOf(seedNumber);
 
         for (int j = 1; j < arrayLength; j++) {
-            numbers[j] = numbers[j - 1] + magnifier;
+            numbers[j] = String.valueOf(Integer.parseInt(numbers[j - 1]) + magnifier);
         }
-
-        String[] numberString = new String[numbers.length];
-        for (int j = 0; j < numbers.length; j++) {
-            numberString[j] = String.valueOf(numbers[j]);
-        }
-        return numberString;
+        return numbers;
     }
 }
