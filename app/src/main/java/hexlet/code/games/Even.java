@@ -11,7 +11,7 @@ public class Even {
         String[] correctAnswers = new String[Engine.NUMBER_OF_QUESTIONS];
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
-            int randomNum = Util.getRandomNumber(10);
+            int randomNum = Util.getRandomNumber(Engine.SIZE_RANDOM);
             questionToUser[i] = String.valueOf(randomNum);
 
             correctAnswers[i] = parityDetection(randomNum) ? "yes" : "no";
@@ -19,7 +19,7 @@ public class Even {
         Engine.gameEngine(question, correctAnswers, questionToUser);
     }
 
-    public static boolean parityDetection(int num) {
+    private static boolean parityDetection(int num) {
         return num % 2 == 0;
     }
 }

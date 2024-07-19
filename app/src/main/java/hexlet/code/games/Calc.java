@@ -16,8 +16,8 @@ public class Calc {
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
             String operation = operations[rand.nextInt(operations.length)];
-            int randomNumOne = Util.getRandomNumber(10);
-            int randomNumTwo = Util.getRandomNumber(10);
+            int randomNumOne = Util.getRandomNumber(Engine.SIZE_RANDOM);
+            int randomNumTwo = Util.getRandomNumber(Engine.SIZE_RANDOM);
             int correctAnswer = conversionOperation(randomNumOne, randomNumTwo, operation);
             correctAnswers[i] = String.valueOf(correctAnswer);
             questionToUser[i] = randomNumOne + operation + randomNumTwo;
@@ -26,7 +26,7 @@ public class Calc {
         Engine.gameEngine(question, correctAnswers, questionToUser);
     }
 
-    public static int conversionOperation(int randNumOne, int randNumTwo, String operation) {
+    private static int conversionOperation(int randNumOne, int randNumTwo, String operation) {
         if (operation.equals(" + ")) {
             return randNumOne + randNumTwo;
 

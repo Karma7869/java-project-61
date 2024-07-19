@@ -16,8 +16,8 @@ public class Progression {
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
 
-            int seedNumber = Util.getRandomNumber(10);
-            int magnifier = Util.getRandomNumber(10);
+            int seedNumber = Util.getRandomNumber(Engine.SIZE_RANDOM);
+            int magnifier = Util.getRandomNumber(Engine.SIZE_RANDOM);
 
             String[] arrayNum = arrayNumbers(seedNumber, magnifier, ARRAY_LENGTH);
             int randIndex = Util.getRandomNumber(arrayNum.length);
@@ -30,7 +30,7 @@ public class Progression {
         Engine.gameEngine(question, correctAnswers, questionToUser);
     }
 
-    public static String[] arrayNumbers(int seedNumber, int magnifier, int arrayLength) {
+    private static String[] arrayNumbers(int seedNumber, int magnifier, int arrayLength) {
         String[] numbers = new String[arrayLength];
         numbers[0] = String.valueOf(seedNumber);
 

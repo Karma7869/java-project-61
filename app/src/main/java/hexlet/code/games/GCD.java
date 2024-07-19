@@ -11,8 +11,8 @@ public class GCD {
         String[] correctAnswers = new String[Engine.NUMBER_OF_QUESTIONS];
 
         for (int i = 0; i < Engine.NUMBER_OF_QUESTIONS; i++) {
-            int randomNumOne = Util.getRandomNumber(10);
-            int randomNumTwo = Util.getRandomNumber(10);
+            int randomNumOne = Util.getRandomNumber(Engine.SIZE_RANDOM);
+            int randomNumTwo = Util.getRandomNumber(Engine.SIZE_RANDOM);
 
             questionToUser[i] = randomNumOne + " " + randomNumTwo;
 
@@ -21,7 +21,7 @@ public class GCD {
         Engine.gameEngine(question, correctAnswers, questionToUser);
     }
 
-    public static int findingGcd(int numOne, int numTwo) {
+    private static int findingGcd(int numOne, int numTwo) {
         while (numTwo != 0) {
             int multiple = numTwo;
             numTwo = numOne % numTwo;

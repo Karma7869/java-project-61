@@ -22,7 +22,7 @@ public class Prime {
         Engine.gameEngine(question, correctAnswers, questionToUser);
     }
 
-    public static boolean primeNumber(int randNum) {
+    private static boolean primeNumber(int randNum) {
         int count = 0;
 
         if (randNum < 2) {

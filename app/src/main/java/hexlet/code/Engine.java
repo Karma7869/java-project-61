@@ -3,6 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public final class Engine {
+    public static final int SIZE_RANDOM = 10;
     public static final int NUMBER_OF_QUESTIONS = 3;
 
     public static void gameEngine(String question, String[] correctAnswer, String[] questionToUser) {
